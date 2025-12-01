@@ -213,11 +213,13 @@ body {
     padding: 1.5rem;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .casino-row:hover:not(.casino-header) {
     background: var(--bg-light);
+    cursor: pointer;
+    transform: translateX(2px);
 }
 
 .casino-header {
@@ -770,10 +772,20 @@ body {
     .casino-row {
         grid-template-columns: 1fr;
         gap: 0.75rem;
+        text-align: center;
     }
 
     .casino-header {
         display: none;
+    }
+
+    .casino-rank,
+    .casino-name,
+    .casino-bonus,
+    .casino-rating,
+    .casino-cta {
+        text-align: center;
+        justify-content: center;
     }
 
     .casino-rank::before {

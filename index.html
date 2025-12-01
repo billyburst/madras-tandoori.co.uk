@@ -317,5 +317,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Make entire casino rows clickable
+        document.querySelectorAll('.casino-row:not(.casino-header)').forEach(row => {
+            row.addEventListener('click', function(e) {
+                // Don't trigger if clicking directly on the button
+                if (e.target.classList.contains('casino-btn')) {
+                    return;
+                }
+
+                // Find the link within this row
+                const link = this.querySelector('.casino-btn');
+                if (link) {
+                    // Open in new tab
+                    window.open(link.href, '_blank', 'noopener,noreferrer');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
